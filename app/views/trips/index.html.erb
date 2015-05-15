@@ -1,0 +1,36 @@
+<script type="text/javascript">
+  var map_array = <%= @location_array.inspect %>;
+  var content_array = <%= raw @content_array.to_json %>;
+  var my_zoom =4;
+  var flag = 1;
+  var geoflag = 1;
+  var mapcenterlat = 38.12829;
+  var mapcenterlong = -94.5795;
+</script>
+
+
+    <div id="map_canvas" style="height:50%;width:75%;margin-left:auto;margin-right:auto"></div>
+
+
+
+<div class="row">
+  <div class="large-10 large-offset-1 columns question-boxes nofill">
+    <h3 class="boxtext">Trip</h3>
+      <div class="large-12 columns blue-box hvr-float">
+        <li>
+          <%@trips.each do|loc|%>
+            <%= link_to "#{loc.address.split(',').first}", trip_path(loc.id), class: "question-text hvr-float" %>
+              <%= link_to "Edit", edit_trip_path(loc.id) %>
+          <%end%>
+        </li>
+        <div class="large-4 large-offset-4 columns">
+          <li><%= paginate @trips %></li>
+        </div>
+      </div>
+     <li> <%= link_to "Add New", new_trip_path %></li>
+  </div>
+</div>
+
+
+
+

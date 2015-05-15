@@ -1,0 +1,17 @@
+
+<div class="row">
+  <div class="large-10 large-offset-1 columns question-boxes">
+    <ul>
+      <li><%= @trip.name%></li>
+      <li><%= @trip.address%></li>
+      <li><%= @trip.description%></li>
+      <li><%= @trip.trip_date%></li>
+    </ul>
+    <li>
+          <%= link_to "VIEW ALL", trips_path,:class => "large-4 large-offset-4 columns secondary small button" %>
+        </li>
+        <li> <%= link_to "Add New", new_trip_path %></li>
+  </div>
+</div>
+
+
