@@ -41,7 +41,7 @@
 
 
           <li>
-            <%= f.select :trip_date, (Time.zone.today - 4000)..(Time.zone.today + 1)%>
+            <%= f.date_select :trip_date, :start_year=>2004,:end_year=>Time.now.year%>
           </li>
           <li><%= f.submit "Update" %></li>
         </div>

@@ -47,15 +47,16 @@
       </div>
 
       <div class="row">
-        <div class="large-8 large-offset-2 columns" id="inputloc">
+        <div class="large-8 large-offset-2 columns" >
           <li>
             <%= f.label :date ,class: "signintext"%>
           </li>
           <li>
-            <%= f.select :trip_date, (Time.zone.today - 4000)..(Time.zone.today + 1)%>
+          <%= f.date_select :trip_date, :start_year=>2004,:end_year=>Time.now.year, class: "calendar_row"%>
           </li>
         </div>
       </div>
+
 
 
 
