@@ -21,6 +21,7 @@
           <%@trips.each do|loc|%>
             <%= link_to "#{loc.name}", trip_path(loc.id), class: "question-text hvr-float" %>
               <%= link_to "Edit", edit_trip_path(loc.id) %>
+               <%= link_to "Enter trip details", new_trip_tripdetail_path(loc.id) %>
           <%end%>
         </li>
         <div class="large-4 large-offset-4 columns">

@@ -1,4 +1,4 @@
-class Tripdetails < ActiveRecord::Base
+class Tripdetail < ActiveRecord::Base
   belongs_to :trip
 
   validates :name, presence: true,
@@ -14,6 +14,6 @@ class Tripdetails < ActiveRecord::Base
   validates :address, presence: true
 
   geocoded_by :address
-  after_validation :geocode, :if => :address_changed?
+  before_validation :geocode, :if => :address_changed?
 
 end
