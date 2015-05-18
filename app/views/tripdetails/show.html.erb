@@ -1,0 +1,35 @@
+<% if flash.any? %>
+  <div class="flash">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+
+<div class="row">
+  <div class="large-6 large-offset-3 columns blue-box">
+    <li><%=link_to "New tripdetail", new_trip_path,class: "question-text hvr-float"%>
+
+    </li>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns blue-box">
+    <div class="large-6 large-offset-3 columns">
+      <li>Name : <%=@tripdetail.name%>
+
+       Location : <%=@tripdetail.trip.address.split(',').first%></li><br>
+       <li><%=link_to "Add photos", new_tripdetail_photo_path(@tripdetail),class: "question-text hvr-float"%>
+        <li><%=link_to "See photos", tripdetail_photos_path(@tripdetail),class: "question-text hvr-float"%>
+    </div>
+      </div>
+
+  </div>
+
+
+
+
+
+
+
+

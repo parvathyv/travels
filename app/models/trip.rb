@@ -1,6 +1,6 @@
 class Trip < ActiveRecord::Base
 
-  #has_many :hunts,  dependent:  :destroy
+  has_many :tripdetails,  dependent:  :destroy
   #has_many :users, through: :hunts
   validates :latitude, presence: true
   validates :longitude, presence: true

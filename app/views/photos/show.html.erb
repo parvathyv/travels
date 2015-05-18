@@ -1,0 +1,17 @@
+
+<div class="row">
+  <div class="large-10 large-offset-1 columns question-boxes">
+    <ul>
+      <li><%= @photo.photo_name%></li>
+       <li><%= image_tag(@photo.photo_name) %></li>
+      <li><%= @photo.description%></li>
+
+    </ul>
+    <li>
+          <%= link_to "VIEW ALL", trips_path,:class => "large-4 large-offset-4 columns secondary small button" %>
+        </li>
+        <li> <%= link_to "Add New", new_trip_path %></li>
+  </div>
+</div>
+
+

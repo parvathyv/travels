@@ -1,18 +1,18 @@
-<div class="row">
-  <div class="large-8 large-offset-2 columns blue-box" id ="inputloc">
-    <h3>Your trip</h3>
-    <%= form_for @trip, action: "create", html: {class: "nifty_form"} do |f| %>
-      <ul>
-        <% if @trip.errors.any? %>
-          <% @trip.errors.full_messages.each do |msg| %>
-            <li>
-              <%= msg %>
-            </li>
-          <% end %>
-        <% end %>
-      </ul>
+<% if flash.any? %>
+  <div class="flash">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+<%= form_for([@trip, @tripdetail]) do |f| %>
+  <ul>
+    <% if @tripdetail.errors.any? %>
+      <% @tripdetail.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    <% end %><br>
+  </ul>
 
-      <div class="row">
+ <div class="row">
         <div class="large-8 large-offset-2 columns" id="inputloc">
           <li>
             <%= f.label :name ,class: "signintext"%>
@@ -46,16 +46,7 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="large-8 large-offset-2 columns" >
-          <li>
-            <%= f.label :date ,class: "signintext"%>
-          </li>
-          <li>
-          <%= f.date_select :trip_date, :start_year=>2004,:end_year=>Time.now.year, class: "calendar_row"%>
-          </li>
-        </div>
-      </div>
+
 
 
 
@@ -68,13 +59,9 @@
         <li>
           <%= f.submit "Create", class: "large-4 large-offset-4 columns answer large button"%>
         </li>
+        </div>
+        </div>
 
-        <li>
-          <%= link_to "VIEW ALL", trips_path,:class => "large-4 large-offset-4 columns secondary small button" %>
-        </li>
-        <br>
-      </div>
-      </div>
-    <% end %>
-  </div>
-</div>
+<% end %>
+
+

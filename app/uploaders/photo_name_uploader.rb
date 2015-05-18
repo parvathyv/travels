@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class ProfilePhotoUploader < CarrierWave::Uploader::Base
+class PhotoNameUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick

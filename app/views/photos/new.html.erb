@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="large-8 large-offset-2 columns blue-box" id ="inputloc">
+    <h3>Your photo</h3>
+    <%= form_for([@tripdetail, @photo]) do |f| %>
+      <ul>
+        <% if @photo.errors.any? %>
+          <% @photo.errors.full_messages.each do |msg| %>
+            <li>
+              <%= msg %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+
+      <div class="row">
+        <div class="large-8 large-offset-2 columns" id="inputloc">
+          <li>
+            <%= f.label :photo_name ,class: "signintext"%>
+          </li>
+           <li><%= f.file_field :photo_name %></li><br>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="large-8 large-offset-2 columns" id="inputloc">
+          <li>
+            <%= f.label :description ,class: "signintext"%>
+          </li>
+          <li>
+            <%= f.text_area :description, placeholder: "Description", class: "text_boxes"%>
+          </li>
+        </div>
+      </div>
+
+
+
+
+      <div class="row">
+       <div class="large-8 large-offset-2 columns" >
+        <li>
+          <%= f.submit "Create", class: "large-4 large-offset-4 columns answer large button"%>
+        </li>
+
+        <li>
+          <%= link_to "Add Photo", new_tripdetail_photo_path(@tripdetail),:class => "large-4 large-offset-4 columns secondary small button" %>
+        </li>
+
+        <li>
+          <%= link_to "VIEW ALL", tripdetail_photos_path,:class => "large-4 large-offset-4 columns secondary small button" %>
+        </li>
+        <br>
+      </div>
+      </div>
+    <% end %>
+  </div>
+</div>
