@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516224721) do
+ActiveRecord::Schema.define(version: 20150518190324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "photo_name",    null: false
+    t.text     "description",   null: false
+    t.integer  "tripdetail_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tripdetails", force: :cascade do |t|
     t.string   "name",        null: false
@@ -22,9 +30,9 @@ ActiveRecord::Schema.define(version: 20150516224721) do
     t.float    "latitude",    null: false
     t.float    "longitude",   null: false
     t.text     "description", null: false
-    t.date     "trip_id",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "trip_id"
   end
 
   create_table "trips", force: :cascade do |t|

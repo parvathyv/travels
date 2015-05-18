@@ -19,7 +19,8 @@
       <li>Name : <%=@tripdetail.name%>
 
        Location : <%=@tripdetail.trip.address.split(',').first%></li><br>
-
+       <li><%=link_to "Add photos", new_tripdetail_photo_path(@tripdetail),class: "question-text hvr-float"%>
+        <li><%=link_to "See photos", tripdetail_photos_path(@tripdetail),class: "question-text hvr-float"%>
     </div>
       </div>
 

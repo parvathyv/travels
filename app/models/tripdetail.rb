@@ -1,5 +1,6 @@
 class Tripdetail < ActiveRecord::Base
   belongs_to :trip
+  has_many :photos,  dependent:  :destroy
 
   validates :name, presence: true,
   length: {
